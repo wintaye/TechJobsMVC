@@ -50,10 +50,10 @@ namespace TechJobs.Models
         {
             // load data, if not already loaded
             LoadData();
-
+            
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
-
-            foreach (Dictionary<string, string> row in AllJobs)
+            
+                foreach (Dictionary<string, string> row in AllJobs)
             {
 
                 foreach (string key in row.Keys)
@@ -62,6 +62,7 @@ namespace TechJobs.Models
 
                     if (aValue.ToLower().Contains(value.ToLower()))
                     {
+                        //add if (! row already in list)
                         jobs.Add(row);
 
                         // Finding one field in a job that matches is sufficient
@@ -72,6 +73,7 @@ namespace TechJobs.Models
 
             return jobs;
         }
+        
 
         /**
          * Returns results of search the jobs data by key/value, using
